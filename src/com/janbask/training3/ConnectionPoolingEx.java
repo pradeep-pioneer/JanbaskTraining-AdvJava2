@@ -21,12 +21,12 @@ public class ConnectionPoolingEx {
     public static void main(String[] args) throws Exception {
         //1. Get the Connection instance from DataSource
         Connection connection = MyDataSourceFactory.getMySQLConnection();
-        //3. Creating a statement
+        //2. Creating a statement
         String sql = "select * from ut_category";
         PreparedStatement statement = connection.prepareStatement(sql);
-        //4. Executing a statement
+        //3. Executing a statement
         ResultSet resultSet = statement.executeQuery();
-        //5. Retrieving values from ResultSet
+        //4. Retrieving values from ResultSet
         while(resultSet.next()){
             String categoryName = resultSet.getString(2);
             String categoryDescription = resultSet.getString(3);
