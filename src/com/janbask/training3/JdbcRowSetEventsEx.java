@@ -29,6 +29,7 @@ public class JdbcRowSetEventsEx {
             //7. Each next() call generates cursor Moved event
             String categoryName = rowSet.getString(2);
             String categoryDescription = rowSet.getString(3);
+
             System.out.printf("\nCategory Name: %s\t\t\tDescription: %s", categoryName, categoryDescription);
         }
         //8. Cleanup the connection

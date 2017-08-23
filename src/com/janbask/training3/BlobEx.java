@@ -28,7 +28,7 @@ public class BlobEx {
             InputStream streamBlob = getHttpStreamForBlobData();
             if(streamBlob!=null) {
                 System.out.printf("Setting statement parameter <blobData=InputStream>: %s\n", LocalDateTime.now());
-                statement.setBinaryStream(BLOB_DATA_INPUT_PARAM, getHttpStreamForBlobData());
+                statement.setBinaryStream(BLOB_DATA_INPUT_PARAM, streamBlob);
                 System.out.printf("Setting statement parameter <clobData=null>: %s\n", LocalDateTime.now());
                 statement.setString(TEXT_DATA_INPUT_PARAM, null);
                 System.out.printf("Inserting data into table (calling execute on statement): %s\n", LocalDateTime.now());
